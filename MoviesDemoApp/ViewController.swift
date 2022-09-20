@@ -9,8 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -18,11 +20,15 @@ class ViewController: UIViewController {
 
     // MARK: - Private methods
     private func setup() {
+        setupTableView()
+    }
+
+    private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .systemPink
     }
-
+    
 }
 
 extension ViewController: UITableViewDelegate {

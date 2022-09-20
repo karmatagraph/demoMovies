@@ -94,6 +94,7 @@ fastlane/test_output
 iOSInjectionProject/
 
 ### Xcode ###
+Constant.swift
 
 ## Xcode 8 and earlier
 
