@@ -24,7 +24,7 @@ struct Movie: Decodable {
     let posterPath: String
     let adult: Bool
     let overview, releaseDate: String
-    let genreIDS: [Int]
+//    let genreIDS: [Int]
     let id: Int
     let originalTitle: String
 //    let originalLanguage: OriginalLanguage
@@ -38,7 +38,7 @@ struct Movie: Decodable {
         case id, title, overview, popularity, adult
         case posterPath = "poster_path"
         case releaseDate = "release_date"
-        case genreIDS = "genre_ids"
+//        case genreIDS = "genre_ids"
         case originalTitle = "original_title"
 //        case originalLanguage = "original_language"
     }
