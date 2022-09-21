@@ -7,5 +7,6 @@ target 'MoviesDemoApp' do
 
   # Pods for MoviesDemoApp
 pod 'Alamofire'
+pod 'Kingfisher', '~> 7.0'
 
 end

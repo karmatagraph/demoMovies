@@ -45,6 +45,7 @@ class MovieListViewController: UIViewController {
         private func setupTableView() {
             tableView.delegate = self
             tableView.dataSource = self
+//            tableView.register(UINib(nibName: MovieListTableViewCell.identifier, bundle: .main), forCellReuseIdentifier: MovieListTableViewCell.identifier)
         }
         
     }
@@ -66,8 +67,9 @@ class MovieListViewController: UIViewController {
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell.textLabel?.text = model[indexPath.row].originalTitle
+            let cell: MovieListTableViewCell = tableView.dequeueCell(for: indexPath)
+            let movie = model[indexPath.row]
+            cell.configure(with: movie)
             return cell
         }
         

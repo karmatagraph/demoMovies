@@ -7,7 +7,6 @@
 
 import Foundation
 
-// change api
 struct API {
     static let baseURL = "https://api.themoviedb.org/3/"
 }
