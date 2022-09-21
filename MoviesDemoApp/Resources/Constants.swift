@@ -8,5 +8,5 @@
 import Foundation
 
 struct Constants {
-    static let imageBaseUrl = "https://image.tmdb.org/t/p/w200"
+    static let imageBaseUrl = "https://image.tmdb.org/t/p/w500"
 }

@@ -18,6 +18,7 @@ protocol Endpoint {
 
 enum Endpoints {
     case discover
+    case movie(id: Int?)
 }
 
 extension Endpoints: Endpoint {
@@ -26,6 +27,8 @@ extension Endpoints: Endpoint {
         switch self {
         case .discover:
             return "discover/movie"
+        case .movie(let id):
+            return "movie\(id == nil ? "" : "/\(id ?? 0)")"
         }
     }
     
