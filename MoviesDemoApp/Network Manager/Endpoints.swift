@@ -9,7 +9,7 @@ import Foundation
 
 // change api
 struct API {
-    static let baseURL = "https://api.themoviedb.org/3/movie/"
+    static let baseURL = "https://api.themoviedb.org/3/"
 }
 
 protocol Endpoint {
@@ -18,15 +18,15 @@ protocol Endpoint {
 }
 
 enum Endpoints {
-    case popular
+    case discover
 }
 
 extension Endpoints: Endpoint {
 
     var path: String {
         switch self {
-        case .popular:
-            return "popular"
+        case .discover:
+            return "discover/movie"
         }
     }
     

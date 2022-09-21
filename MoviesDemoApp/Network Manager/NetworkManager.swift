@@ -10,7 +10,7 @@ import Alamofire
 
 class NetworkManager {
     static func getPopular(completion: @escaping(Result<Bool, Error>) -> Void) {
-        AF.request(Endpoints.popular.url).response { response in
+        AF.request(Endpoints.discover.url).response { response in
             debugPrint(response)
             guard let statusCode = response.response?.statusCode else { return }
             if statusCode >= 200 && statusCode < 300 {
