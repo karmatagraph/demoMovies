@@ -5,6 +5,8 @@
 //  Created by karma on 9/19/22.
 //
 
+//movie list view controller
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -21,8 +23,15 @@ class ViewController: UIViewController {
     // MARK: - Private methods
     private func setup() {
         setupTableView()
+        fetchData()
     }
 
+    private func fetchData() {
+        NetworkManager.getPopular { [weak self] result in
+            print(result)
+        }
+    }
+    
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -48,7 +57,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: )!
         cell.textLabel?.text = "movies \(indexPath.row)"
         return cell
     }

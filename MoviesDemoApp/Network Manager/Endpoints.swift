@@ -7,8 +7,9 @@
 
 import Foundation
 
+// change api
 struct API {
-    static let url = "https://api.themoviedb.org/3/movie/"
+    static let baseURL = "https://api.themoviedb.org/3/movie/"
 }
 
 protocol Endpoint {
@@ -30,7 +31,7 @@ extension Endpoints: Endpoint {
     }
     
     var url: URL {
-        return URL(string: "\(API.url)\(path)")!
+        return URL(string: "\(API.baseURL)\(path)?api_key=\(APIKEY.key)")!
     }
     
 }
