@@ -55,7 +55,8 @@ class MovieListViewController: UIViewController {
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
             let destVC = UIStoryboard(name: "MovieDetailStoryboard", bundle: nil).instantiateViewController(withIdentifier: "MovieDetailStoryboard") as! MovieDetailViewController
-            destVC.movieId = model[indexPath.row].id
+            destVC.movie = model[indexPath.row]
+            destVC.navigationItem.largeTitleDisplayMode = .never
             navigationController?.pushViewController(destVC, animated: true)
         }
         

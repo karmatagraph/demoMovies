@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let vc = storyboard.instantiateViewController(withIdentifier: "MovieListStoryboard") as! MovieListViewController
         let navVC = UINavigationController(rootViewController: vc)
         navVC.navigationBar.prefersLargeTitles = true
+        navVC.navigationBar.tintColor = .label
         navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
         window?.rootViewController = navVC
     }
