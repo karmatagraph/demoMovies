@@ -54,8 +54,9 @@ class MovieListViewController: UIViewController {
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
-            // navigate to the detail screen
-            print("\(model[indexPath.row].originalTitle) clicked")
+            let destVC = UIStoryboard(name: "MovieDetailStoryboard", bundle: nil).instantiateViewController(withIdentifier: "MovieDetailStoryboard") as! MovieDetailViewController
+            destVC.movieId = model[indexPath.row].id
+            navigationController?.pushViewController(destVC, animated: true)
         }
         
     }
