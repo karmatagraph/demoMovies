@@ -17,7 +17,9 @@ class MovieListTableViewCell: UITableViewCell {
     // MARK: - Methods
     func configure(with movie: Movie) {
         titleLbl.text = movie.originalTitle
-        releaseDateLbl.text = "Released date: " + movie.releaseDate
+        titleLbl.textColor = .label
+        releaseDateLbl.text = "Released on " + movie.releaseDate
+        releaseDateLbl.textColor = .secondaryLabel
 //        imageView?.setImage(urlString: Constants.imageBaseUrl + movie.posterPath)
         imgView.kf.setImage(with: URL(string: Constants.imageBaseUrl + movie.posterPath))
     }
