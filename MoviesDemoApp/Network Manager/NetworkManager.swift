@@ -9,21 +9,29 @@ import Foundation
 import Alamofire
 
 class NetworkManager {
-    static func getPopular(completion: @escaping(Result<Bool, Error>) -> Void) {
+    
+//    static func getApi<D: Decodable>(with url: URL, completion: @escaping(Result<D,Error>) -> Void) {
+//        AF.request(url).response { response in
+//            guard let statusCode = response.response?.statusCode else { return }
+//            if statusCode >= 200 && statusCode < 300 {
+//                completion(.success())
+//            }
+//        }
+//    }
+    
+    static func getDiscover(completion: @escaping(Result<[Movie], Error>) -> Void) {
         AF.request(Endpoints.discover.url).response { response in
             debugPrint(response)
             guard let statusCode = response.response?.statusCode else { return }
             if statusCode >= 200 && statusCode < 300 {
-                completion(.success(true))
-            } else if statusCode <= 300 && statusCode > 400 {
-                print("redirect error")
-            } else if statusCode <= 500 {
-                print("server error")
-            } else if statusCode <= 400 && statusCode < 500 {
-                completion(.success(false))
-                print("bad url request")
-            } else {
-                completion(.success(false))
+                do {
+                    guard let data = response.data else { return }
+                    let result = try JSONDecoder().decode(Discover.self, from: data)
+                    let movieModel = result.results
+                    completion(.success(movieModel))
+                } catch let error {
+                    completion(.failure(error))
+                }
             }
         }
     }
