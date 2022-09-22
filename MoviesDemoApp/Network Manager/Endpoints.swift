@@ -17,23 +17,26 @@ protocol Endpoint {
 }
 
 enum Endpoints {
-    case discover
-    case movie(id: Int?)
+    case discover(Int)
+    case movie(Int)
 }
 
-extension Endpoints: Endpoint {
-
+extension Endpoints {
+    
     var path: String {
         switch self {
-        case .discover:
-            return "discover/movie"
+        case .discover(let ofPage):
+            return "\(API.baseURL)discover/movie?api_key=\(APIKEY.key)&page=\(ofPage)"
         case .movie(let id):
-            return "movie\(id == nil ? "" : "/\(id ?? 0)")"
+            return "\(API.baseURL)movie/\(id)?api_key=\(APIKEY.key)"
         }
     }
     
     var url: URL {
-        return URL(string: "\(API.baseURL)\(path)?api_key=\(APIKEY.key)")!
+        return URL(string: "\(path)")!
     }
     
 }
+
+
+

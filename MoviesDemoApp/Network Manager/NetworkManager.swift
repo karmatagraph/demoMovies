@@ -10,8 +10,8 @@ import Alamofire
 
 class NetworkManager {
     
-    static func getApi<D: Decodable>(with url: URL, expecting: D.Type, completion: @escaping(Result<D,Error>) -> Void) {
-        AF.request(url).response { response in
+    static func getApi<D: Decodable>(with endpoint: Endpoints, expecting: D.Type, completion: @escaping(Result<D,Error>) -> Void) {
+        AF.request(endpoint.url).response { response in
             guard let statusCode = response.response?.statusCode else { return }
             if statusCode >= 200 && statusCode < 300 {
                 guard let data = response.data else { return }

@@ -12,6 +12,7 @@ class MovieListViewController: UIViewController {
     // MARK: - Properties
     var model = [Movie]()
     private var isMoreMoviesAvailable: Bool = false
+    private var page: Int = 1
 
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -30,10 +31,11 @@ class MovieListViewController: UIViewController {
         }
 
         private func fetchData() {
-            NetworkManager.getApi(with: Endpoints.discover.url, expecting: Discover.self) { [ weak self ] result in
+            
+            NetworkManager.getApi(with: .discover(page), expecting: Discover.self) { [ weak self ] result in
                 switch result {
                 case .success(let discoverModel):
-                    self?.model = discoverModel.results
+                    self?.model.append(contentsOf: discoverModel.results)
                     if discoverModel.page == discoverModel.totalPages {
                         self?.isMoreMoviesAvailable = false
                     } else {
@@ -41,6 +43,7 @@ class MovieListViewController: UIViewController {
                     }
                     DispatchQueue.main.async {
                         self?.tableView.reloadData()
+                        self?.page += 1
                     }
                 case .failure(let error):
                     print("failed to get data from api:::\(error.localizedDescription)")
