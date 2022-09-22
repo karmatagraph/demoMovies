@@ -12,6 +12,7 @@ class MovieListTableViewCell: UITableViewCell {
     // MARK: - Outlets
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var imgActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var releaseDateLbl: UILabel!
     
     // MARK: - Methods
