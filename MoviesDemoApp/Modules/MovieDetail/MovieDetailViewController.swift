@@ -25,6 +25,8 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var overviewLbl: UILabel!
     @IBOutlet weak var imgView: UIImageView!
     
+    @IBOutlet weak var coverView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Lifecycles
     override func viewDidLoad() {
@@ -36,6 +38,7 @@ class MovieDetailViewController: UIViewController {
     private func setup() {
         title = movie?.originalTitle
         fetchData()
+        setupActivityIndicator()
     }
     
     private func fetchData() {
@@ -44,11 +47,20 @@ class MovieDetailViewController: UIViewController {
             case .success(let movieDetailModel):
                 DispatchQueue.main.async {
                     self?.updateUI(with: movieDetailModel)
+                    self?.activityIndicator.stopAnimating()
+                    self?.coverView.fadeOut(duration: 3, delay: 0)
+//                    self?.coverView.hideWithAnimation(hidden: true)
                 }
             case .failure(let error):
                 print("failed to get movie details")
             }
         }
+    }
+    
+    private func setupActivityIndicator() {
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        coverView.isHidden = false
     }
     
     private func updateUI(with model: MovieDetail) {

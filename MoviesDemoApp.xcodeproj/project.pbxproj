@@ -11,7 +11,7 @@
 		4803303028D9CFE000E53E12 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4803302F28D9CFE000E53E12 /* NetworkManager.swift */; };
 		4803303328D9D04200E53E12 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4803303228D9D04200E53E12 /* Endpoints.swift */; };
 		4803303528D9D59300E53E12 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4803303428D9D59300E53E12 /* Constant.swift */; };
-		486ECA1728DB1E06004C2665 /* MovieListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486ECA1628DB1E06004C2665 /* MovieListTableViewCell.xib */; };
+		485B449728DC2B3E00E36BC3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485B449628DC2B3E00E36BC3 /* UIView+Extension.swift */; };
 		486ECA1928DB21E3004C2665 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ECA1828DB21E3004C2665 /* MovieDetailViewController.swift */; };
 		486ECA1B28DB21F4004C2665 /* MovieDetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 486ECA1A28DB21F4004C2665 /* MovieDetailStoryboard.storyboard */; };
 		486ECA1D28DB267B004C2665 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ECA1C28DB267B004C2665 /* Date+Extension.swift */; };
@@ -37,7 +37,7 @@
 		4803302F28D9CFE000E53E12 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4803303228D9D04200E53E12 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		4803303428D9D59300E53E12 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		486ECA1628DB1E06004C2665 /* MovieListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieListTableViewCell.xib; sourceTree = "<group>"; };
+		485B449628DC2B3E00E36BC3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		486ECA1828DB21E3004C2665 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		486ECA1A28DB21F4004C2665 /* MovieDetailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetailStoryboard.storyboard; sourceTree = "<group>"; };
 		486ECA1C28DB267B004C2665 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -154,6 +154,7 @@
 				487843A628DAFEDD00CDA7AB /* UITableViewCell+Extension.swift */,
 				48741BF628DB129000A0C18B /* UIImageView+Extension.swift */,
 				486ECA1C28DB267B004C2665 /* Date+Extension.swift */,
+				485B449628DC2B3E00E36BC3 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -198,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				48A3E1E328DAF79E002D218D /* MovieListTableViewCell.swift */,
-				486ECA1628DB1E06004C2665 /* MovieListTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -271,7 +271,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				486ECA1728DB1E06004C2665 /* MovieListTableViewCell.xib in Resources */,
 				4870749C28D8723400127281 /* LaunchScreen.storyboard in Resources */,
 				486ECA1B28DB21F4004C2665 /* MovieDetailStoryboard.storyboard in Resources */,
 				4870749928D8723400127281 /* Assets.xcassets in Resources */,
@@ -336,6 +335,7 @@
 				486ECA1928DB21E3004C2665 /* MovieDetailViewController.swift in Sources */,
 				486ECA1D28DB267B004C2665 /* Date+Extension.swift in Sources */,
 				48D6F30928DADBE8006C86CC /* MovieListViewController.swift in Sources */,
+				485B449728DC2B3E00E36BC3 /* UIView+Extension.swift in Sources */,
 				4870749228D8723200127281 /* SceneDelegate.swift in Sources */,
 				48741BF728DB129000A0C18B /* UIImageView+Extension.swift in Sources */,
 				48741BF928DB12CA00A0C18B /* Constants.swift in Sources */,

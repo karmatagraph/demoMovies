@@ -83,20 +83,35 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZH-rv-aJw">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="5Zv-sR-khC">
+                                <rect key="frame" x="185" y="412" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5Zv-sR-khC" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="0xS-08-H9X"/>
+                            <constraint firstItem="5Zv-sR-khC" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="9to-oe-lSm"/>
+                            <constraint firstItem="HZH-rv-aJw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="CqW-zY-ZXH"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="gV5-hQ-YEB" secondAttribute="bottom" constant="10" id="HIW-JP-47r"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gV5-hQ-YEB" secondAttribute="trailing" id="Hv9-Fz-Zya"/>
                             <constraint firstItem="gV5-hQ-YEB" firstAttribute="top" secondItem="ejz-WK-4ty" secondAttribute="bottom" constant="8" symbolic="YES" id="LBY-QJ-hgk"/>
                             <constraint firstItem="gV5-hQ-YEB" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" id="Qm3-TE-U7s"/>
+                            <constraint firstItem="HZH-rv-aJw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Rdl-sW-OfN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HZH-rv-aJw" secondAttribute="trailing" id="a3K-gP-06d"/>
                             <constraint firstItem="ejz-WK-4ty" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="onz-VD-hSk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="HZH-rv-aJw" secondAttribute="bottom" id="thw-Vt-Up7"/>
                             <constraint firstItem="ejz-WK-4ty" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" id="z7H-pi-maC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="5Zv-sR-khC" id="EcS-yb-qQQ"/>
                         <outlet property="budgetLbl" destination="ubr-8z-5yP" id="dYM-sj-nMX"/>
+                        <outlet property="coverView" destination="HZH-rv-aJw" id="bZU-ze-8Cy"/>
                         <outlet property="genreLbl" destination="2v1-4m-G8K" id="Nta-xa-zTt"/>
                         <outlet property="imgView" destination="ejz-WK-4ty" id="V4k-6S-9KE"/>
                         <outlet property="overviewLbl" destination="Pqg-DU-wfr" id="1Eb-3E-mJF"/>
