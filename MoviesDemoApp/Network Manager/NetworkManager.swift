@@ -10,26 +10,16 @@ import Alamofire
 
 class NetworkManager {
     
-//    static func getApi<D: Decodable>(with url: URL, completion: @escaping(Result<D,Error>) -> Void) {
-//        AF.request(url).response { response in
-//            guard let statusCode = response.response?.statusCode else { return }
-//            if statusCode >= 200 && statusCode < 300 {
-//                completion(.success())
-//            }
-//        }
-//    }
-    
-    static func getDiscover(completion: @escaping(Result<Discover, Error>) -> Void) {
-        AF.request(Endpoints.discover.url).response { response in
-            debugPrint(response)
+    static func getApi<D: Decodable>(with url: URL, expecting: D.Type, completion: @escaping(Result<D,Error>) -> Void) {
+        AF.request(url).response { response in
             guard let statusCode = response.response?.statusCode else { return }
             if statusCode >= 200 && statusCode < 300 {
+                guard let data = response.data else { return }
                 do {
-                    guard let data = response.data else { return }
-                    let result = try JSONDecoder().decode(Discover.self, from: data)
+                    let result = try JSONDecoder().decode(expecting, from: data)
                     completion(.success(result))
                 } catch let error {
-                    completion(.failure(error))
+                    print("decode error:::\(error.localizedDescription)")
                 }
             }
         }
