@@ -11,6 +11,7 @@ class MovieListViewController: UIViewController {
     
     // MARK: - Properties
     var model = [Movie]()
+    private var isMoreMoviesAvailable: Bool = false
 
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -29,15 +30,20 @@ class MovieListViewController: UIViewController {
         }
 
         private func fetchData() {
-            NetworkManager.getDiscover { [weak self] result in
+            NetworkManager.getApi(with: Endpoints.discover.url, expecting: Discover.self) { [ weak self ] result in
                 switch result {
-                case .success(let movie):
-                    self?.model = movie
+                case .success(let discoverModel):
+                    self?.model = discoverModel.results
+                    if discoverModel.page == discoverModel.totalPages {
+                        self?.isMoreMoviesAvailable = false
+                    } else {
+                        self?.isMoreMoviesAvailable = true
+                    }
                     DispatchQueue.main.async {
                         self?.tableView.reloadData()
                     }
                 case .failure(let error):
-                    print("error getting data from the api::: \(error.localizedDescription)")
+                    print("failed to get data from api:::\(error.localizedDescription)")
                 }
             }
         }
@@ -50,6 +56,7 @@ class MovieListViewController: UIViewController {
         
     }
 
+    // MARK: - TableView Delegate
     extension MovieListViewController: UITableViewDelegate {
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -60,8 +67,28 @@ class MovieListViewController: UIViewController {
             navigationController?.pushViewController(destVC, animated: true)
         }
         
+        // MARK: - TableView footer
+        private func setupFooterView() {
+            let spinner = UIActivityIndicatorView(style: .gray)
+            spinner.startAnimating()
+            spinner.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50)
+            tableView?.tableFooterView = spinner
+        }
+        
+        func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+            let lastRowIndex = tableView.numberOfRows(inSection: 0)
+            if indexPath.item == (lastRowIndex - 1) && isMoreMoviesAvailable {
+                setupFooterView()
+                print("get more data")
+                fetchData()
+            } else {
+                tableView.tableFooterView = nil
+            }
+        }
+        
     }
 
+    // MARK: - TableView Datasource
     extension MovieListViewController: UITableViewDataSource {
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
