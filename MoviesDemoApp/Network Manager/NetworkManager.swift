@@ -19,7 +19,7 @@ class NetworkManager {
 //        }
 //    }
     
-    static func getDiscover(completion: @escaping(Result<[Movie], Error>) -> Void) {
+    static func getDiscover(completion: @escaping(Result<Discover, Error>) -> Void) {
         AF.request(Endpoints.discover.url).response { response in
             debugPrint(response)
             guard let statusCode = response.response?.statusCode else { return }
@@ -27,8 +27,7 @@ class NetworkManager {
                 do {
                     guard let data = response.data else { return }
                     let result = try JSONDecoder().decode(Discover.self, from: data)
-                    let movieModel = result.results
-                    completion(.success(movieModel))
+                    completion(.success(result))
                 } catch let error {
                     completion(.failure(error))
                 }
