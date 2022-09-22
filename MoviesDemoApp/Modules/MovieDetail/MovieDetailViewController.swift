@@ -42,17 +42,16 @@ class MovieDetailViewController: UIViewController {
     }
     
     private func fetchData() {
-        NetworkManager.getMovieDetail(with: movie?.id ?? 0) { [weak self] result in
+        NetworkManager.getApi(with: Endpoints.movie(id: movie?.id).url, expecting: MovieDetail.self) { [ weak self ] result in
             switch result {
             case .success(let movieDetailModel):
                 DispatchQueue.main.async {
                     self?.updateUI(with: movieDetailModel)
                     self?.activityIndicator.stopAnimating()
                     self?.coverView.fadeOut(duration: 3, delay: 0)
-//                    self?.coverView.hideWithAnimation(hidden: true)
                 }
             case .failure(let error):
-                print("failed to get movie details")
+                print("error fetching data:::\(error)")
             }
         }
     }

@@ -25,19 +25,4 @@ class NetworkManager {
         }
     }
     
-    static func getMovieDetail(with id: Int, completion: @escaping(Result<MovieDetail,Error>) -> Void) {
-        AF.request(Endpoints.movie(id: id).url).response { response in
-            guard let statusCode = response.response?.statusCode else { return }
-            if statusCode >= 200 && statusCode < 300 {
-                do {
-                    guard let data = response.data else { return }
-                    let result = try JSONDecoder().decode(MovieDetail.self, from: data)
-                    completion(.success(result))
-                } catch let error {
-                    completion(.failure(error))
-                }
-            }
-        }
-    }
-    
 }
