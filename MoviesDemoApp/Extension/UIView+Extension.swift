@@ -62,4 +62,12 @@ extension UIView {
         self.clipsToBounds = true
     }
 
+    func setShadow(height: CGFloat = 3, radius: CGFloat = 6, opacity: Float = 0.5,color:UIColor = .gray) {
+           self.layer.masksToBounds = false
+           self.layer.shadowColor = color.cgColor
+           self.layer.shadowOffset = CGSize(width: 0, height: height)
+           self.layer.shadowRadius = radius
+           self.layer.shadowOpacity = opacity
+       }
+    
 }

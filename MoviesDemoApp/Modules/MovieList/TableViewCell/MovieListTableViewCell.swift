@@ -11,6 +11,7 @@ class MovieListTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var voteLbl: UILabel!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var imgActivityIndicator: UIActivityIndicatorView!
@@ -26,7 +27,7 @@ class MovieListTableViewCell: UITableViewCell {
     // MARK: - Private Methods
     private func setup() {
         containerView.set(cornerRadius: (containerView.height/2)/4)
-        containerView.backgroundColor = .lightGray
+        containerView.setShadow()
     }
     
     // MARK: - Methods
@@ -35,6 +36,7 @@ class MovieListTableViewCell: UITableViewCell {
         titleLbl.textColor = .label
         releaseDateLbl.text = "Released on " + movie.releaseDate
         releaseDateLbl.textColor = .secondaryLabel
+        voteLbl.text = "\(movie.voteAverage)"
 //        imageView?.setImage(urlString: Constants.imageBaseUrl + movie.posterPath)
         imgView.kf.setImage(with: URL(string: Constants.imageBaseUrl + movie.posterPath))
         imgView.set(cornerRadius: imgView.height/8)

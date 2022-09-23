@@ -8,6 +8,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Movie List View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -39,27 +47,42 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIa-1m-hoS">
-                                                            <rect key="frame" x="79.333333333333329" y="10" width="250.66666666666669" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="79.333333333333329" y="10" width="250.66666666666669" height="26"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="22"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4A-qx-FhO">
-                                                            <rect key="frame" x="79.333333333333329" y="39" width="250.66666666666669" height="21"/>
+                                                            <rect key="frame" x="79.333333333333329" y="44" width="250.66666666666669" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJZ-hf-EmW">
+                                                            <rect key="frame" x="288" y="73.666666666666671" width="42" height="21.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OTp-gD-aps">
+                                                            <rect key="frame" x="258" y="73.333333333333343" width="22" height="21"/>
+                                                            <color key="tintColor" systemColor="systemYellowColor"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="ZIa-1m-hoS" secondAttribute="trailing" constant="20" symbolic="YES" id="3Ae-QU-tzv"/>
+                                                        <constraint firstAttribute="trailing" secondItem="HJZ-hf-EmW" secondAttribute="trailing" constant="20" symbolic="YES" id="7Rw-8t-nCw"/>
                                                         <constraint firstItem="fJW-oG-a6f" firstAttribute="leading" secondItem="wCj-aw-odZ" secondAttribute="leading" constant="8" id="7lU-9t-sjX"/>
                                                         <constraint firstItem="ZIa-1m-hoS" firstAttribute="leading" secondItem="fJW-oG-a6f" secondAttribute="trailing" constant="8" symbolic="YES" id="Ewi-Y6-qrO"/>
+                                                        <constraint firstItem="HJZ-hf-EmW" firstAttribute="leading" secondItem="OTp-gD-aps" secondAttribute="trailing" constant="8" symbolic="YES" id="Fzc-WE-6Rz"/>
+                                                        <constraint firstAttribute="bottom" secondItem="HJZ-hf-EmW" secondAttribute="bottom" constant="20" symbolic="YES" id="NTf-x5-OrV"/>
                                                         <constraint firstItem="S4A-qx-FhO" firstAttribute="trailing" secondItem="ZIa-1m-hoS" secondAttribute="trailing" id="QDZ-cL-a7J"/>
                                                         <constraint firstItem="S4A-qx-FhO" firstAttribute="top" secondItem="ZIa-1m-hoS" secondAttribute="bottom" constant="8" symbolic="YES" id="Sfg-uU-v4X"/>
                                                         <constraint firstItem="ZIa-1m-hoS" firstAttribute="top" secondItem="fJW-oG-a6f" secondAttribute="top" id="YEu-Ez-C6M"/>
+                                                        <constraint firstItem="OTp-gD-aps" firstAttribute="top" secondItem="HJZ-hf-EmW" secondAttribute="top" id="dyu-hX-XWq"/>
                                                         <constraint firstAttribute="bottom" secondItem="fJW-oG-a6f" secondAttribute="bottom" constant="10" id="o55-f0-6RL"/>
+                                                        <constraint firstItem="OTp-gD-aps" firstAttribute="bottom" secondItem="HJZ-hf-EmW" secondAttribute="bottom" id="raF-IA-oyl"/>
                                                         <constraint firstItem="S4A-qx-FhO" firstAttribute="leading" secondItem="ZIa-1m-hoS" secondAttribute="leading" id="tgR-l2-I0W"/>
                                                         <constraint firstItem="fJW-oG-a6f" firstAttribute="top" secondItem="wCj-aw-odZ" secondAttribute="top" constant="10" id="zS6-xe-4pX"/>
                                                     </constraints>
@@ -77,6 +100,7 @@
                                             <outlet property="imgView" destination="fJW-oG-a6f" id="JTp-ej-J0R"/>
                                             <outlet property="releaseDateLbl" destination="S4A-qx-FhO" id="ZUW-rY-iYc"/>
                                             <outlet property="titleLbl" destination="ZIa-1m-hoS" id="cb2-uf-2SP"/>
+                                            <outlet property="voteLbl" destination="HJZ-hf-EmW" id="23v-n4-fnE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -101,8 +125,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
