@@ -25,7 +25,7 @@ struct MovieDetail: Decodable {
     let spokenLanguages: [SpokenLanguage]
     let status, tagline, title: String
     let video: Bool
-//    let voteAverage: Double
+    let voteAverage: Double
 //    let voteCount: Int
 
     enum CodingKeys: String, CodingKey {
@@ -39,6 +39,7 @@ struct MovieDetail: Decodable {
         case productionCountries = "production_countries"
         case releaseDate = "release_date"
         case spokenLanguages = "spoken_languages"
+        case voteAverage = "vote_average"
         
     }
 }

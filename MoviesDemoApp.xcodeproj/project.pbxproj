@@ -25,6 +25,7 @@
 		4870749C28D8723400127281 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4870749A28D8723400127281 /* LaunchScreen.storyboard */; };
 		48741BF728DB129000A0C18B /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48741BF628DB129000A0C18B /* UIImageView+Extension.swift */; };
 		48741BF928DB12CA00A0C18B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48741BF828DB12CA00A0C18B /* Constants.swift */; };
+		4875E5CD28DE5A0C00C959EF /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875E5CC28DE5A0C00C959EF /* Double+Extension.swift */; };
 		487843A728DAFEDD00CDA7AB /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487843A628DAFEDD00CDA7AB /* UITableViewCell+Extension.swift */; };
 		48986AC828DD721300058533 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48986AC728DD721300058533 /* UIViewController+Extension.swift */; };
 		48986AD028DD9F3700058533 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48986ACD28DD9F3600058533 /* Roboto-Thin.ttf */; };
@@ -58,6 +59,7 @@
 		4870749D28D8723400127281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48741BF628DB129000A0C18B /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		48741BF828DB12CA00A0C18B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4875E5CC28DE5A0C00C959EF /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		487843A628DAFEDD00CDA7AB /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		48986AC728DD721300058533 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		48986ACD28DD9F3600058533 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				486ECA1C28DB267B004C2665 /* Date+Extension.swift */,
 				485B449628DC2B3E00E36BC3 /* UIView+Extension.swift */,
 				48986AC728DD721300058533 /* UIViewController+Extension.swift */,
+				4875E5CC28DE5A0C00C959EF /* Double+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				485B449728DC2B3E00E36BC3 /* UIView+Extension.swift in Sources */,
 				4870749228D8723200127281 /* SceneDelegate.swift in Sources */,
 				48741BF728DB129000A0C18B /* UIImageView+Extension.swift in Sources */,
+				4875E5CD28DE5A0C00C959EF /* Double+Extension.swift in Sources */,
 				48741BF928DB12CA00A0C18B /* Constants.swift in Sources */,
 				487843A728DAFEDD00CDA7AB /* UITableViewCell+Extension.swift in Sources */,
 				4803303328D9D04200E53E12 /* Endpoints.swift in Sources */,
@@ -526,8 +530,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -556,8 +560,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
