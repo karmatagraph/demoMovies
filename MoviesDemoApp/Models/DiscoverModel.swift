@@ -32,7 +32,7 @@ struct Movie: Decodable {
     let popularity: Double
 //    let voteCount: Int
 //    let video: Bool
-//    let voteAverage: Double
+    let voteAverage: Double
     
     enum CodingKeys: String, CodingKey {
         case id, title, overview, popularity, adult
@@ -41,6 +41,7 @@ struct Movie: Decodable {
 //        case genreIDS = "genre_ids"
         case originalTitle = "original_title"
 //        case originalLanguage = "original_language"
+        case voteAverage = "vote_average"
     }
 }
 

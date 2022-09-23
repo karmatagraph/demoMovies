@@ -42,7 +42,8 @@ class MovieDetailViewController: UIViewController {
     }
     
     private func fetchData() {
-        NetworkManager.getApi(with: Endpoints.movie(id: movie?.id).url, expecting: MovieDetail.self) { [ weak self ] result in
+        guard let id = movie?.id else { return }
+        NetworkManager.getApi(with: .movie(id), expecting: MovieDetail.self) { [ weak self ] result in
             switch result {
             case .success(let movieDetailModel):
                 DispatchQueue.main.async {
