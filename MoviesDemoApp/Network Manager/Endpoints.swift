@@ -8,7 +8,7 @@
 import Foundation
 
 struct API {
-    static let baseURL = "https://api.themoviedb.org/3//"
+    static let baseURL = "https://api.themoviedb.org/3/"
 }
 
 protocol Endpoint {

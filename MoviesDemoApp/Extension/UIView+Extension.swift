@@ -8,6 +8,31 @@
 import UIKit
 
 extension UIView {
+    
+    var width: CGFloat{
+           return frame.size.width
+       }
+       
+       var height: CGFloat{
+           return frame.size.height
+       }
+       
+       var left: CGFloat{
+           return frame.origin.x
+       }
+       
+       var right: CGFloat{
+           return left + width
+       }
+       
+       var top: CGFloat{
+           return frame.origin.y
+       }
+       
+       var bottom: CGFloat {
+           return top + height
+       }
+    
     func fadeIn(duration: TimeInterval = 0.5, delay: TimeInterval = 0.0, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in }) {
         self.alpha = 0.0
 
@@ -30,6 +55,11 @@ extension UIView {
         UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve, animations: {
             self.isHidden = hidden
         })
+    }
+    
+    func set(cornerRadius: CGFloat) {
+        self.layer.cornerRadius = cornerRadius
+        self.clipsToBounds = true
     }
 
 }
