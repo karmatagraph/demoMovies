@@ -59,13 +59,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJZ-hf-EmW">
-                                                            <rect key="frame" x="288" y="73.666666666666671" width="42" height="21.333333333333329"/>
+                                                            <rect key="frame" x="288" y="85.666666666666671" width="42" height="21.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OTp-gD-aps">
-                                                            <rect key="frame" x="258" y="73.333333333333343" width="22" height="21"/>
+                                                            <rect key="frame" x="258" y="85.333333333333343" width="22" height="21"/>
                                                             <color key="tintColor" systemColor="systemYellowColor"/>
                                                         </imageView>
                                                     </subviews>
@@ -76,7 +76,7 @@
                                                         <constraint firstItem="fJW-oG-a6f" firstAttribute="leading" secondItem="wCj-aw-odZ" secondAttribute="leading" constant="8" id="7lU-9t-sjX"/>
                                                         <constraint firstItem="ZIa-1m-hoS" firstAttribute="leading" secondItem="fJW-oG-a6f" secondAttribute="trailing" constant="8" symbolic="YES" id="Ewi-Y6-qrO"/>
                                                         <constraint firstItem="HJZ-hf-EmW" firstAttribute="leading" secondItem="OTp-gD-aps" secondAttribute="trailing" constant="8" symbolic="YES" id="Fzc-WE-6Rz"/>
-                                                        <constraint firstAttribute="bottom" secondItem="HJZ-hf-EmW" secondAttribute="bottom" constant="20" symbolic="YES" id="NTf-x5-OrV"/>
+                                                        <constraint firstAttribute="bottom" secondItem="HJZ-hf-EmW" secondAttribute="bottom" constant="8" id="NTf-x5-OrV"/>
                                                         <constraint firstItem="S4A-qx-FhO" firstAttribute="trailing" secondItem="ZIa-1m-hoS" secondAttribute="trailing" id="QDZ-cL-a7J"/>
                                                         <constraint firstItem="S4A-qx-FhO" firstAttribute="top" secondItem="ZIa-1m-hoS" secondAttribute="bottom" constant="8" symbolic="YES" id="Sfg-uU-v4X"/>
                                                         <constraint firstItem="ZIa-1m-hoS" firstAttribute="top" secondItem="fJW-oG-a6f" secondAttribute="top" id="YEu-Ez-C6M"/>

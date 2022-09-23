@@ -39,6 +39,8 @@ class MovieListTableViewCell: UITableViewCell {
         voteLbl.text = "\(movie.voteAverage)"
 //        imageView?.setImage(urlString: Constants.imageBaseUrl + movie.posterPath)
         imgView.kf.setImage(with: URL(string: Constants.imageBaseUrl + movie.posterPath))
+        imgView.setupBorder(color: .systemYellow, radius:8 )
         imgView.set(cornerRadius: imgView.height/8)
+        
     }
 }
