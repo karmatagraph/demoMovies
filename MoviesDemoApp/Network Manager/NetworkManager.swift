@@ -8,9 +8,26 @@
 import Foundation
 import Alamofire
 
+enum APIError: Error {
+    case badURL(Int)
+    case serverError(Int)
+    case decodeError
+    
+    var description: String {
+            switch self {
+            case .badURL(let statusCode):
+                return "\(statusCode): bad url or request"
+            case .serverError(let statusCode):
+                return "\(statusCode): it not your fault its the server so chill!"
+            case .decodeError:
+                return "could not decode the json data"
+            }
+        }
+}
+
 class NetworkManager {
     
-    static func getApi<D: Decodable>(with endpoint: Endpoints, expecting: D.Type, completion: @escaping(Result<D,Error>) -> Void) {
+    static func getApi<D: Decodable>(with endpoint: Endpoints, expecting: D.Type, completion: @escaping(Result<D,APIError>) -> Void) {
         AF.request(endpoint.url).response { response in
             guard let statusCode = response.response?.statusCode else { return }
             if statusCode >= 200 && statusCode < 300 {
@@ -21,6 +38,10 @@ class NetworkManager {
                 } catch let error {
                     print("decode error:::\(error.localizedDescription)")
                 }
+            } else if statusCode <= 500 {
+                completion(.failure(.serverError(statusCode)))
+            } else {
+                completion(.failure(.badURL(statusCode)))
             }
         }
     }
