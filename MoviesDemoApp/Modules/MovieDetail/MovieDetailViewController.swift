@@ -40,6 +40,7 @@ class MovieDetailViewController: UIViewController {
     // MARK: - Private Methods
     private func setup() {
         title = movie?.originalTitle
+        navigationItem.largeTitleDisplayMode = .never
         fetchData()
         setupUI()
         setupActivityIndicator()

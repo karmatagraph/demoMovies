@@ -27,7 +27,7 @@ enum APIError: Error {
 
 class NetworkManager {
     
-    static func getApi<D: Decodable>(with endpoint: Endpoints, expecting: D.Type, completion: @escaping(Result<D,APIError>) -> Void) {
+    static func getApi<D: Decodable>(with endpoint: Endpoints, expecting: D.Type, completion: @escaping (Result<D, APIError>) -> Void) {
         AF.request(endpoint.url).response { response in
             guard let statusCode = response.response?.statusCode else { return }
             if statusCode >= 200 && statusCode < 300 {
